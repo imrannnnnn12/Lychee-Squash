@@ -11,7 +11,7 @@ function TestimonialItem({ rating, testimonial, userImg, name, designation }) {
     <div className="border rounded-md max-w-md">
       <div className="px-7 pt-7 pb-6">
         <div className="text-yellow-400 flex h-8">
-         {ratings}
+          {ratings}
         </div>
         <p className="text-left pt-4">{testimonial}</p>
 

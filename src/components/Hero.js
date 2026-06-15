@@ -1,32 +1,41 @@
-import { PlayIcon } from "@heroicons/react/solid";
 import React from "react";
 
 function Hero() {
   return (
-    // parent div
-    <main className="container mt-4 md:flex flex-row-reverse justify-between items-center">
-      <div className="md:max-w-[50%]">
-        <img src="./images/amico.svg" alt="hero" />
-      </div>
-
-       {/* text section */}
-      <div className="text-center sm:text-left md:max-w-[40%]">
-        <h1 className="font-bold text-4xl leading-[60px]">
-          Work at the speed of thought
-        </h1>
-        <p className="mt-4 text-[18px] leading-[28px] font-normal">
-          Tools, tutorials, design and innovation experts, all in one place! The
-          most intuitive way to imagine your next user experience.
-        </p>
-        <div className="mt-8 flex items-center justify-around sm:justify-start sm:space-x-8">
-          <button className="primary-button">Get Started</button>
-          <p className="font-semibold text-primary whitespace-nowrap flex items-center underline hover:scale-110 active:scale-95 duration-200 cursor-pointer">
-            <PlayIcon className="h-8" />
-            Watch the Video
+    // Latar belakang diubah menjadi #f9fafb agar senada dan menyatu dengan Header baru Anda
+    <div style={{ backgroundColor: "#f9fafb", minHeight: "85vh", width: "100%", display: "flex", alignItems: "center" }}>
+      <main style={{ maxWidth: "1200px", margin: "0 auto", padding: "50px 20px", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+        
+        {/* Sisi Kiri: Teks */}
+        <div style={{ flex: "1", paddingRight: "40px" }}>
+          <h1 style={{ fontSize: "80px", fontWeight: "800", lineHeight: "1.1", color: "#064e3b", marginBottom: "30px" }}>
+            Leci Squash <br />
+            <span style={{ color: "#059669" }}>with Selasih</span>
+          </h1>
+          <p style={{ fontSize: "28px", color: "#065f46", marginBottom: "40px", fontWeight: "500" }}>
+            Rasakan sensasi soda dingin berpadu sirup leci premium. Dilengkapi ekstra biji selasih untuk sensasi asyik di setiap tegukan.
           </p>
+          <a 
+            href="https://wa.me/6285397786286" 
+            style={{ backgroundColor: "#10b981", color: "white", padding: "20px 40px", borderRadius: "50px", fontSize: "22px", fontWeight: "bold", textDecoration: "none", display: "inline-block" }}
+          >
+            Pesan
+          </a>
         </div>
-      </div>
-    </main>
+
+        {/* Sisi Kanan: Gambar */}
+        <div style={{ flex: "1", display: "flex", justifyContent: "center", position: "relative" }}>
+          <div style={{ backgroundColor: "#d1fae5", padding: "30px", borderRadius: "50px", transform: "rotate(3deg)" }}>
+            <img 
+              src="./images/kewirus-removebg-preview.png" 
+              alt="Leci Squash" 
+              style={{ width: "450px", height: "450px", objectFit: "contain" }} 
+            />
+          </div>
+        </div>
+
+      </main>
+    </div>
   );
 }
 

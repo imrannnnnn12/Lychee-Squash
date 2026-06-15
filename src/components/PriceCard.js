@@ -1,31 +1,85 @@
 import React from "react";
 
-function PriceCard({ title, description, price, operators }) {
-  const features = [
-    `${operators} Operators`,
-    "Notifications",
-    "Landing Pages",
-  ];
+function PriceCard() {
   return (
-    <div className="border min-w-[80vw] sm:min-w-[400px] md:min-w-full group even:bg-primary even:text-white flex flex-col items-center rounded-xl shadow-borderShadow">
-      <h4 className="mt-6 font-bold text-2xl">{title}</h4>
-      <p className="mt-2">{description}</p>
+    <div style={{
+      width: "100%",
+      maxWidth: "480px", // KARTU DIPERBESAR (sebelumnya 360px)
+      backgroundColor: "#02897A",
+      borderRadius: "24px",
+      overflow: "hidden", 
+      boxShadow: "0 25px 50px -12px rgba(2, 137, 122, 0.5)", // Efek bayangan lebih dramatis
+      display: "flex",
+      flexDirection: "column",
+      margin: "0 auto"
+    }}>
 
-      <div className="mt-6 flex items-center">
-        <p className="text-7xl text-primary group-even:text-white font-bold">{price}</p>
-        <div className="ml-2 flex flex-col items-start">
-          <p className="text-primary group-even:text-white font-bold text-2xl">$</p>
-          <p className="text-[#AFAFAF] group-even:text-[#E0E0E0] -mt-1">Per / month</p>
+      {/* Bagian Gambar (Dibuat jauh lebih tinggi) */}
+      <div style={{ width: "100%", height: "600px", backgroundColor: "#ffffff" }}>
+        <img 
+          src="./images/poster.png" 
+          alt="Promo Leci Squash" 
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} 
+        />
+      </div>
+
+      {/* Pembungkus Teks (Tetap dipertahankan ringkas dan pendek) */}
+      <div style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        padding: "16px 20px 20px 20px" // Jarak tetap dibuat tipis
+      }}>
+
+        {/* Teks Produk */}
+        <h3 style={{ fontSize: "18px", color: "#ffffff", fontWeight: "bold", margin: "0 0 2px 0" }}>
+          Leci Squash
+        </h3>
+        <p style={{ fontSize: "13px", color: "#ccfbf1", margin: "0 0 8px 0" }}>
+          Segar Nikmat with Selasih
+        </p>
+
+        {/* Angka Harga */}
+        <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", marginBottom: "12px" }}>
+          <span style={{ fontSize: "40px", fontWeight: "900", color: "#ffffff", lineHeight: "1" }}>10</span>
+          <span style={{ fontSize: "14px", color: "#ffffff", marginLeft: "4px", fontWeight: "bold" }}>Ribu</span>
         </div>
-      </div>
 
-      <div className="mt-5">
-        {features.map((feature) => (
-          <p key={feature} className="mt-4">{feature}</p>
-        ))}
-      </div>
+        {/* List Keunggulan (Dirapatkan) */}
+        <div style={{ 
+          display: "flex", 
+          flexDirection: "column", 
+          alignItems: "center", 
+          color: "#ffffff", 
+          fontSize: "13px", 
+          lineHeight: "1.4", // Rapat
+          marginBottom: "15px" 
+        }}>
+          <span>Cup Ukuran Besar</span>
+          <span>Ekstra Biji Selasih</span>
+          <span>Sirup Leci Premium</span>
+        </div>
 
-      <button className="primary-button mt-9 mb-8 group-even:primary-button-white rounded-lg">Order Now</button>
+        {/* Tombol Order Now (Tetap pipih) */}
+        <a 
+          href="https://wa.me/6285397786286" 
+          style={{
+            backgroundColor: "#ffffff",
+            color: "#02897A",
+            padding: "10px 0",
+            width: "100%", 
+            maxWidth: "200px",
+            textAlign: "center",
+            borderRadius: "8px",
+            fontWeight: "bold",
+            fontSize: "14px",
+            textDecoration: "none"
+          }}
+        >
+          Pesan Sekarang
+        </a>
+
+      </div>
     </div>
   );
 }

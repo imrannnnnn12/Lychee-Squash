@@ -3,37 +3,65 @@ import "../index.css";
 import { MenuIcon } from "@heroicons/react/solid";
 
 function Header() {
-  // const navItems = [];
+  // Fungsi untuk mendeteksi ID dan menggeser layar secara mulus
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
-    <header className="container flex justify-between shadow-md md:shadow-none h-20 ">
-      <img
-        className="md:hidden lg:inline-flex"
-        src="./images/logo-full.svg"
-        alt=""
-        width="180"
-      />
-      <img
-        className="hidden md:inline-block lg:hidden"
-        src="./images/logo.svg"
-        alt=""
-        width="45"
-      />
-      <div className="flex items-center">
-        <MenuIcon className="h-10 md:hidden" />
-        <div className="hidden md:flex items-center space-x-3 lg:space-x-8">
-          {/* <div className="hidden max-w-xl md:grid gap-4 grid-cols-4 text-right"> */}
-          <p className="nav-item">Product</p>
-          <p className="nav-item">Customers</p>
-          <p className="nav-item">Pricing</p>
-          <p className="nav-item">Resouces</p>
-          {/* </div> */}
-
-          <button className="secondary-button">Sign in</button>
-          <button className="primary-button">Sign up</button>
+    <div style={{ backgroundColor: "#f9fafb", width: "100%" }}>
+      <header className="container mx-auto flex justify-between items-center shadow-md md:shadow-none h-20 px-6">
+        
+        {/* Logo Lengkap (Desktop) */}
+        <img
+          className="md:hidden lg:inline-flex cursor-pointer"
+          src="./images/logo.png"
+          alt="Logo Leci Squash"
+          width="180"
+        />
+        
+        {/* Logo Singkat (Tablet) */}
+        <img
+          className="hidden md:inline-block lg:hidden cursor-pointer"
+          src="./images/logo.png"
+          alt="Logo Leci Squash"
+          width="45"
+        />
+        
+        <div className="flex items-center">
+          <MenuIcon className="h-10 md:hidden text-[#064e3b] cursor-pointer" />
+          
+          {/* Menu Navigasi dengan Fungsi Klik */}
+          <div className="hidden md:flex items-center space-x-8 lg:space-x-12">
+            <p 
+              onClick={() => scrollToSection("features")} // Mengarah ke id="features"
+              className="nav-item cursor-pointer font-bold text-[#064e3b] hover:text-[#10b981] transition-colors"
+              style={{ fontSize: "22px" }}
+            >
+              Produk
+            </p>
+            <p 
+              onClick={() => scrollToSection("pricing")} // Mengarah ke id="pricing"
+              className="nav-item cursor-pointer font-bold text-[#064e3b] hover:text-[#10b981] transition-colors"
+              style={{ fontSize: "22px" }}
+            >
+              Harga
+            </p>
+            <p 
+              onClick={() => scrollToSection("testimonials")} // Mengarah ke id="testimonials"
+              className="nav-item cursor-pointer font-bold text-[#064e3b] hover:text-[#10b981] transition-colors"
+              style={{ fontSize: "22px" }}
+            >
+              Testimoni
+            </p>
+          </div>
         </div>
-      </div>
-    </header>
+        
+      </header>
+    </div>
   );
 }
 

@@ -2,38 +2,45 @@ import React from "react";
 import TestimonialItem from "./TestimonialItem";
 
 function Testimonials() {
-  const testimonial =
-    "Product helps you see how many more days you need to work to reach your financial goal.";
   return (
-    <section className="container mt-36 text-center flex flex-col items-center">
-      <h3 className="text-4xl font-bold">What Clients Say</h3>
+    <section 
+      id="testimonials" // Kunci Navigasi: Menghubungkan ke tombol "Testimoni" di Header
+      className="container mt-36 text-center flex flex-col items-center"
+    >
+      <h3 className="text-4xl font-bold">Apa Kata Mereka</h3>
       <p className="font-medium mt-4 max-w-lg">
-        Problems trying to resolve the conflict between the two major realms of
-        Classical physics: Newtonian mechanics{" "}
+        Testimoni jujur dari pelanggan yang sudah mencoba kesegaran Leci Squash kami.
       </p>
 
       <div className="mt-12 min-w-[80vw] justify-center md:gap-4 md:min-w-full grid gap-8 md:grid-cols-3">
+        
+        {/* Testimoni 1: Faizal */}
         <TestimonialItem
-          name="Nina Watson"
-          designation="Designer"
-          userImg="./images/user-1.jpg"
+          name="Faizal"
+          designation="Teknik Sipil"
+          userImg="https://i.pravatar.cc/150?img=11"
           rating={4}
-          testimonial={testimonial}
+          testimonial="Seger banget! Pas banget buat nemenin nugas gambar teknik sampai malam. Rasa lecinya premium dan selasihnya bikin tambah nikmat. Bakal sering order nih!"
         />
+        
+        {/* Testimoni 2: Jemas */}
         <TestimonialItem
-          name="Janice Harrison"
-          designation="Programmer"
-          userImg="./images/user-2.jpg"
-          rating={3}
-          testimonial={testimonial}
-        />
-        <TestimonialItem
-          name="Amy Adams"
-          designation="Photographer"
-          userImg="./images/user-3.jpg"
+          name="Jemas"
+          designation="Manajemen"
+          userImg="https://i.pravatar.cc/150?img=33"
           rating={4}
-          testimonial={testimonial}
+          testimonial="Harganya aman di kantong mahasiswa, tapi rasanya kayak minuman kafe mahal. Nyegerin banget diminum siang-siang sehabis kelas, pelayanannya juga ramah."
         />
+        
+        {/* Testimoni 3: Aldo */}
+        <TestimonialItem
+          name="Aldo"
+          designation="Hukum"
+          userImg="https://i.pravatar.cc/150?img=59"
+          rating={4}
+          testimonial="Packaging-nya rapi dan rapat, jadi aman dibawa-bawa. Leci squash-nya bener-bener melegakan tenggorokan setelah seharian suntuk baca materi kuliah."
+        />
+        
       </div>
     </section>
   );
